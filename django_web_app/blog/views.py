@@ -16,6 +16,13 @@ from django.contrib.staticfiles.views import serve
 
 from django.db.models import Q
 
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')  # or any named URL pattern
+
 
 def home(request):
     context = {

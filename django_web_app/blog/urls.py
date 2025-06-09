@@ -8,6 +8,9 @@ from .views import (
     UserPostListView
 )
 from . import views
+from .views import logout_view
+
+
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
@@ -19,4 +22,5 @@ urlpatterns = [
     path('media/Files/<int:pk>',PostDeleteView.as_view(),name='post-delete' ),
     path('search/',views.search,name='search' ),
     path('about/', views.about, name='blog-about'),
+    path('logout/', logout_view, name='logout'),
 ]
